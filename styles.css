@@ -362,6 +362,7 @@ em {
 .hero-monogram {
   position: absolute;
   width: 70%;
+  height: auto;
   bottom: 45px;
   left: 15%;
   z-index: 1;
