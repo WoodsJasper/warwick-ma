@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta name="wm-static" content="true" />
+    <link rel="canonical" href="https://woodsjasper.github.io/warwick-ma/" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#26113f" />
+    <meta
+      name="description"
+      content="Explore Warwick M&A Group's sector reports, investment pitches and student research team."
+    />
+    <title>Warwick M&A Group — Research & Pitches</title>
+    <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="content.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Warwick M&A Group home"
+        ><img src="assets/mark.svg" alt="" width="49" height="44" /><span
+          >WARWICK<span>M&A GROUP</span></span
+        ></a
+      >
+      <button
+        class="menu-toggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >
+        <span></span><span></span>
+      </button>
+      <nav id="main-nav" aria-label="Main navigation">
+        <a href="#research">Research</a><a href="#pitches">Stock pitches</a
+        ><a href="#events">Events</a><a href="#divisions">Divisions</a
+        ><a href="#people">Our people</a>
+        <a class="nav-contact" href="#get-involved"
+          >Get involved <span aria-hidden="true">↗</span></a
+        >
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">University of Warwick · Est. 2019</p>
+          <h1 id="hero-title">The deal.<br />The <em>detail.</em></h1>
+          <p class="hero-description">
+            Sector research and investment ideas.<br />Written by Warwick
+            students.
+          </p>
+          <a class="button primary" href="#research"
+            >Explore our research <span aria-hidden="true">↗</span></a
+          >
+          <a class="hero-secondary" href="#pitches"
+            >Inside our stock pitches <span aria-hidden="true">→</span></a
+          >
+          <div class="hero-edition">
+            <span class="edition-line"></span
+            ><span>Independent thinking.<br />A student perspective.</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img
+            src="assets/city.jpg"
+            alt="Looking up at the towers of a financial district"
+            fetchpriority="high"
+          />
+          <div class="hero-image-overlay"></div>
+          <div class="image-caption">
+            <span>WARWICK M&A GROUP</span><span>RESEARCH & PERSPECTIVES</span>
+          </div>
+          <svg class="hero-monogram" viewBox="0 0 400 250" aria-hidden="true">
+            <path d="M10 15H390M36 15L157 230L278 15M131 15L252 230L373 15" />
+          </svg>
+        </div>
+      </section>
+      <div class="edition-strip">
+        <span>THE RESEARCH DESK</span>
+        <p id="desk-line">
+          Sector reports. Investment ideas. The thinking behind them.
+        </p>
+        <a href="#research" aria-label="Go to research library">↓</a>
+      </div>
+
+      <section
+        class="section research-section"
+        id="research"
+        aria-labelledby="research-title"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">01 / Our research</p>
+            <h2 id="research-title">Behind the headline.</h2>
+          </div>
+          <p>Explore the transactions.<br />Open the full analysis.</p>
+        </div>
+        <div class="research-toolbar">
+          <div
+            class="sector-filters"
+            role="group"
+            aria-label="Filter reports by division"
+          >
+            <button class="filter active" data-sector="all" aria-pressed="true">
+              All research</button
+            ><button class="filter" data-sector="TMT" aria-pressed="false">
+              TMT</button
+            ><button
+              class="filter"
+              data-sector="Healthcare"
+              aria-pressed="false"
+            >
+              Healthcare</button
+            ><button
+              class="filter"
+              data-sector="Industrials & Energy"
+              aria-pressed="false"
+            >
+              Industrials & Energy</button
+            ><button
+              class="filter"
+              data-sector="Financial Sponsors"
+              aria-pressed="false"
+            >
+              Financial Sponsors
+            </button>
+          </div>
+          <button
+            class="search-toggle"
+            aria-label="Search reports"
+            aria-expanded="false"
+            aria-controls="search-panel"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="10.5" cy="10.5" r="6.5" />
+              <path d="m16 16 5 5" />
+            </svg>
+          </button>
+        </div>
+        <div id="search-panel" class="search-panel" hidden>
+          <label for="report-search">Find a company, sector or report</label>
+          <div class="search-fields">
+            <input
+              type="search"
+              id="report-search"
+              placeholder="e.g. Netflix, energy, healthcare"
+              autocomplete="off"
+            /><label class="sr-only" for="quarter-filter"
+              >Reporting period</label
+            ><select id="quarter-filter">
+              <option value="all">All periods</option>
+              <option>Q4 2025</option>
+              <option>Q3 2025</option></select
+            ><button class="text-button" id="clear-search">Reset</button>
+          </div>
+        </div>
+        <div id="report-grid" class="report-grid"></div>
+        <div class="research-bottom">
+          <p id="report-count" role="status" aria-live="polite"></p>
+          <button id="show-all" class="text-link">
+            View the research archive <span aria-hidden="true">↗</span>
+          </button>
+        </div>
+        <p class="archive-download">
+          <a href="assets/research/warwick-ma-instagram-archive.zip" download
+            >Download the complete PDF archive
+            <span aria-hidden="true">↓</span></a
+          ><span>29 posts · 223 original slides</span>
+        </p>
+        <noscript
+          ><p>
+            JavaScript is needed for the searchable library.
+            <a href="assets/research/2025-q4-healthcare.pdf"
+              >Open the latest research PDF</a
+            >
+            or
+            <a href="assets/research/warwick-ma-instagram-archive.zip"
+              >download the complete PDF archive</a
+            >.
+          </p></noscript
+        >
+      </section>
+
+      <section class="pitch-section" id="pitches" aria-labelledby="pitch-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">02 / Stock pitches & competitions</p>
+            <h2 id="pitch-title">The investment case.</h2>
+          </div>
+          <div
+            class="pitch-tabs"
+            role="group"
+            aria-label="Choose past or upcoming pitches"
+          >
+            <button data-pitch-tab="past" class="active" aria-pressed="true">
+              Past pitches</button
+            ><button data-pitch-tab="upcoming" aria-pressed="false">
+              Upcoming
+            </button>
+          </div>
+        </div>
+        <div id="past-pitches">
+          <div class="pitch-grid">
+            <button
+              class="pitch-feature"
+              data-pitch="propetro"
+              aria-label="Read the ProPetro stock pitch"
+            >
+              <img
+                src="assets/energy.jpg"
+                alt="Electricity infrastructure against the evening sky"
+                loading="lazy"
+              /><span class="pitch-shade"></span
+              ><span class="pitch-top"
+                ><span>MEMBER PITCH / ALPHA X2</span
+                ><span class="result-label">2ND PLACE</span></span
+              ><span class="pitch-feature-copy"
+                ><span class="eyebrow">NYSE: PUMP · LONG THESIS</span
+                ><span class="pitch-company">ProPetro</span
+                ><span class="pitch-deck"
+                  >A power business.<br />An oilfield valuation.</span
+                ><span class="pitch-read"
+                  >Explore the thesis <span aria-hidden="true">↗</span></span
+                ></span
+              >
+            </button>
+            <button
+              class="pitch-secondary"
+              data-pitch="shoals"
+              aria-label="Read the Shoals Technologies stock pitch"
+            >
+              <span class="pitch-top"
+                ><span>MEMBER PITCH / ALPHA X1</span
+                ><span aria-hidden="true">↗</span></span
+              ><span class="ticker-art" aria-hidden="true"
+                >SHLS<span>−</span></span
+              ><span class="eyebrow">NASDAQ: SHLS · SHORT THESIS</span
+              ><span class="pitch-company">Shoals Technologies</span
+              ><span class="secondary-deck"
+                >Testing the assumptions<br />behind the premium.</span
+              ><span class="pitch-read"
+                >Explore the thesis <span aria-hidden="true">↗</span></span
+              >
+            </button>
+          </div>
+          <div id="published-pitches" hidden></div>
+          <p class="pitch-note">
+            Selected work by co-president Bryan Lee and his competition teams.
+            Historical views, as presented.
+          </p>
+        </div>
+        <div id="upcoming-pitches" class="upcoming-panel" hidden>
+          <span class="upcoming-symbol" aria-hidden="true">↗</span>
+          <div>
+            <p class="eyebrow">Next on the calendar</p>
+            <h3>The next pitch starts here.</h3>
+            <p>New dates will appear when announced by the society.</p>
+            <a
+              class="button light"
+              href="https://www.instagram.com/warwickmagroup/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Follow the next announcement
+              <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section events-section"
+        id="events"
+        aria-labelledby="events-title"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">03 / Events</p>
+            <h2 id="events-title">On the calendar.</h2>
+          </div>
+          <div
+            class="event-tabs"
+            role="group"
+            aria-label="Choose upcoming or past events"
+          >
+            <button
+              class="active"
+              data-event-tab="upcoming"
+              aria-pressed="true"
+            >
+              Upcoming</button
+            ><button data-event-tab="past" aria-pressed="false">
+              Past events
+            </button>
+          </div>
+        </div>
+        <div class="event-filter">
+          <label for="event-division">Showing</label
+          ><select id="event-division">
+            <option value="all">All divisions</option>
+            <option>TMT</option>
+            <option>Healthcare</option>
+            <option>Industrials &amp; Energy</option>
+            <option>Financial Sponsors</option>
+          </select>
+        </div>
+        <div id="event-grid" class="event-grid"></div>
+      </section>
+      <section
+        class="section announcements-section"
+        id="announcements"
+        aria-labelledby="announcements-title"
+        hidden
+      >
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">From the group</p>
+            <h2 id="announcements-title">Announcements.</h2>
+          </div>
+        </div>
+        <div id="announcement-list"></div>
+      </section>
+
+      <section
+        class="section division-section"
+        id="divisions"
+        aria-labelledby="division-title"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">04 / Divisions</p>
+            <h2 id="division-title">
+              Different sectors.<br />The same scrutiny.
+            </h2>
+          </div>
+          <p>Specialist teams.<br />One research desk.</p>
+        </div>
+        <div class="division-layout">
+          <div class="division-list" id="division-list"></div>
+          <div
+            class="division-preview"
+            id="division-preview"
+            aria-live="polite"
+          ></div>
+        </div>
+      </section>
+
+      <section
+        class="people-section"
+        id="people"
+        aria-labelledby="people-title"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">05 / Our people</p>
+            <h2 id="people-title">The people behind the work.</h2>
+          </div>
+          <span class="academic-year">2026 / 27</span>
+        </div>
+        <div class="people-layout">
+          <div class="presidents-panel">
+            <p class="eyebrow">Co-presidents</p>
+            <div class="president-portraits">
+              <div>
+                <div
+                  class="portrait bryan"
+                  role="img"
+                  aria-label="Bryan Lee, from the society's presidents announcement"
+                ></div>
+                <h3>Bryan Lee</h3>
+              </div>
+              <div>
+                <div
+                  class="portrait leuan"
+                  role="img"
+                  aria-label="Leuan Jennings, from the society's presidents announcement"
+                ></div>
+                <h3>Leuan Jennings</h3>
+              </div>
+            </div>
+            <a
+              class="text-link"
+              href="https://www.instagram.com/warwickmagroup/p/DeHppsDDrOC/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Meet the presidents <span aria-hidden="true">↗</span></a
+            >
+          </div>
+          <div class="structure">
+            <p class="eyebrow">How the group works</p>
+            <div class="structure-top">
+              <span>01</span>
+              <div>
+                <h3>Presidents</h3>
+                <p>Society leadership & direction</p>
+              </div>
+            </div>
+            <div class="structure-branches">
+              <div>
+                <span class="structure-index">02 / Research</span>
+                <h3>Sector heads</h3>
+                <p>Guide coverage & review analysis</p>
+                <span class="structure-connector" aria-hidden="true"></span>
+                <h3>Analysts</h3>
+                <p>Research, model & write</p>
+              </div>
+              <div>
+                <span class="structure-index">02 / External relations</span>
+                <h3>Corporate outreach</h3>
+                <p>Connect the society with industry</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="join-section" id="get-involved">
+        <div>
+          <p class="eyebrow">Get involved</p>
+          <h2>Bring your perspective.</h2>
+          <p>Follow the group for recruitment, events and new research.</p>
+        </div>
+        <a
+          class="button primary"
+          href="https://linktr.ee/warwickmagroup"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Connect with the group <span aria-hidden="true">↗</span></a
+        >
+      </section>
+    </main>
+    <footer>
+      <a class="brand footer-brand" href="#home"
+        ><img src="assets/mark.svg" alt="" width="49" height="44" /><span
+          >WARWICK<span>M&A GROUP</span></span
+        ></a
+      >
+      <div class="footer-links">
+        <a
+          href="https://www.instagram.com/warwickmagroup/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Instagram ↗</a
+        ><a
+          href="https://www.linkedin.com/company/warwickmagroup/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >LinkedIn ↗</a
+        ><a
+          href="https://drive.google.com/drive/folders/1vhhk1Z5Fi_YtQj_1AN8JT_gKat4SQm2k"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Career resources ↗</a
+        >
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Warwick M&A Group</span
+        ><span>Student research for educational purposes.</span
+        ><span
+          ><a href="#home">Back to top ↑</a></span
+        >
+      </div>
+    </footer>
+    <dialog id="detail-dialog" aria-labelledby="detail-title">
+      <button class="dialog-close" aria-label="Close details">×</button>
+      <div id="detail-content"></div>
+    </dialog>
+  </body>
+</html>

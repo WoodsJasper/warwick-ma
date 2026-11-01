@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Warwick MA Group//Events//EN
+BEGIN:VEVENT
+UID:uk-europe-ma-2026@warwick-ma-group
+DTSTAMP:20261101T095021Z
+DTSTART;VALUE=DATE:20260312
+DTEND;VALUE=DATE:20260313
+SUMMARY:UK & Europe M&A Case Competition
+DESCRIPTION:Buy-side acquisition pitches\, with the finals held in London. Co-hosted by Warwick M&A Group.
+LOCATION:London
+END:VEVENT
+END:VCALENDAR
