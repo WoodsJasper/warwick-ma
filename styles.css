@@ -131,14 +131,14 @@ em {
 .brand {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 14px;
   color: var(--plum);
 }
 .brand > span {
   font-family: Georgia, serif;
   font-size: 16px;
   letter-spacing: 3px;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 .brand > span > span {
   display: block;
@@ -475,6 +475,25 @@ em {
 }
 .search-panel {
   padding: 0 0 24px;
+}
+.filter-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 0 24px;
+  padding: 12px 16px;
+  background: var(--paper);
+  border-left: 2px solid var(--purple);
+  font-size: 12px;
+}
+.filter-summary p {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.filter-summary button {
+  flex-shrink: 0;
+  min-height: 44px;
 }
 .search-panel > label {
   font-size: 11px;
@@ -1520,8 +1539,8 @@ dialog::backdrop {
   .menu-toggle {
     border: 0;
     background: none;
-    width: 37px;
-    height: 37px;
+    width: 44px;
+    height: 44px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1670,7 +1689,8 @@ dialog::backdrop {
   }
   .search-toggle {
     margin-left: 10px;
-    width: 27px;
+    width: 44px;
+    height: 44px;
   }
   .report-grid {
     grid-template-columns: 1fr;

@@ -49,6 +49,13 @@ function renderPeriods() {
 function renderReports() {
   const term = $("#report-search").value.trim().toLocaleLowerCase();
   const period = $("#quarter-filter").value;
+  const filters = [
+    sector !== "all" ? sector : "",
+    period !== "all" ? period : "",
+    term ? `Search: “${$("#report-search").value.trim()}”` : "",
+  ].filter(Boolean);
+  $("#filter-summary").hidden = !filters.length;
+  $("#active-filters").textContent = filters.join(" · ");
   const matched = REPORTS.filter(
     (r) =>
       (sector === "all" ||
@@ -202,6 +209,7 @@ document.addEventListener("click", async (event) => {
 $("#show-all").addEventListener("click", () => {
   expanded = !expanded;
   renderReports();
+  if (!expanded) $("#research").scrollIntoView({ block: "start" });
 });
 $("#report-search").addEventListener("input", renderReports);
 $("#quarter-filter").addEventListener("change", renderReports);
@@ -242,9 +250,11 @@ $$("#main-nav a").forEach((a) =>
 );
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && !dialog.open) {
+    const wasOpen = $(".menu-toggle").getAttribute("aria-expanded") === "true";
     $("#main-nav").classList.remove("open");
     $(".menu-toggle").setAttribute("aria-expanded", "false");
     $(".menu-toggle").setAttribute("aria-label", "Open navigation");
+    if (wasOpen) $(".menu-toggle").focus();
   }
 });
 $("#year").textContent = String(new Date().getFullYear());
