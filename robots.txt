@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://woodsjasper.github.io/warwick-ma/sitemap.xml
+Sitemap: https://warwickmagroup.co.uk/sitemap.xml
