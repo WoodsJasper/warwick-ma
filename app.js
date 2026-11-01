@@ -337,13 +337,14 @@ function openEvent(id, trigger) {
 }
 function renderAnnouncements() {
   $("#announcements").hidden = !ANNOUNCEMENTS.length;
+  $("#announcement-banner").hidden = !ANNOUNCEMENTS.length;
   $("#announcement-list").innerHTML = ANNOUNCEMENTS.map(
     (a) =>
       `<button class="announcement-row" data-announcement="${a.id}"><img src="${esc(a.cover)}" alt="" loading="lazy"><span><span class="eyebrow">${esc(a.division === "all" ? "All divisions" : a.division)}</span><strong>${esc(a.title)}</strong></span><span aria-hidden="true">↗</span></button>`,
   ).join("");
   $("#desk-line").innerHTML = ANNOUNCEMENTS.length
     ? `<button class="desk-announcement" data-announcement="${ANNOUNCEMENTS[0].id}">${esc(ANNOUNCEMENTS[0].title)} <span aria-hidden="true">↗</span></button>`
-    : "Sector reports. Investment ideas. The thinking behind them.";
+    : "";
 }
 function openAnnouncement(id, trigger) {
   const a = ANNOUNCEMENTS.find((a) => a.id === id);
